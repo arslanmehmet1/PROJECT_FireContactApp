@@ -1,11 +1,27 @@
+import { useState } from "react";
 import "./App.css";
 import Contacts from "./components/contacts/Contacts";
 import FormComponent from "./components/form/FormComponent";
 
+const initialValue = {
+  username: "",
+  phoneNumber: "",
+  gender: "",
+};
 function App() {
+  const [info, setInfo] = useState(initialValue);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // AddUser();
+  };
   return (
     <div className="App">
-      <FormComponent />
+      <FormComponent
+        info={info}
+        setInfo={setInfo}
+        handleSubmit={handleSubmit}
+      />
       <Contacts />
     </div>
   );
