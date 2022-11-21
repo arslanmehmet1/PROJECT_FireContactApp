@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Contacts from "./components/contacts/Contacts";
 import FormComponent from "./components/form/FormComponent";
+import { AddUser } from "./utils/functions";
 
 const initialValue = {
   username: "",
@@ -13,7 +14,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // AddUser();
+    AddUser(info);
   };
   return (
     <div className="App">
